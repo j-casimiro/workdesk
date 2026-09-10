@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vite/
+.sites-runtime/
+.env
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+*.log
+*.tsbuildinfo
+.DS_Store
