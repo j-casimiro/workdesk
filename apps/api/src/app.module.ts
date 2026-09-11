@@ -1,12 +1,15 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { resolve } from 'node:path';
+import { mkdirSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
 import { CheckpointsModule } from './checkpoints/checkpoints.module';
 import { TicketsModule } from './tickets/tickets.module';
 
 const databasePath = process.env.WORKDESK_DB_PATH
   ? resolve(process.cwd(), process.env.WORKDESK_DB_PATH)
   : resolve(__dirname, '../../../data/workdesk.sqlite');
+
+mkdirSync(dirname(databasePath), { recursive: true });
 
 @Module({
   imports: [

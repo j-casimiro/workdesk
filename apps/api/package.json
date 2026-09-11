@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tsx watch src/main.ts",
+    "dev": "tsc -p tsconfig.json && concurrently -k -n compiler,server -c yellow,cyan \"tsc -p tsconfig.json --watch --preserveWatchOutput\" \"node --watch-path=dist --watch-preserve-output dist/main.js\"",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/main.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
