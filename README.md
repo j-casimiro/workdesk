@@ -49,6 +49,8 @@ codex mcp add workdesk -- node /absolute/path/to/workdesk/packages/mcp/dist/inde
 
 Run `/mcp` in Codex to verify that `workdesk` is active. Start the API before using the MCP tools.
 
+For the complete setup, command reference, daily workflow, checkpoint examples, and troubleshooting guide, see [Using Workdesk with Codex](docs/codex-usage.md).
+
 ## Data and credentials
 
 The SQLite database is stored under `data/` and ignored by Git. Workdesk does not store OpenAI, Jira, Slack, or GitHub credentials.
